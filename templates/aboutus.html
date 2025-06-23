@@ -1,0 +1,62 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Start Banner Area -->
+<section class="banner-area relative" id="home" style="background: url({% static 'img/banner/banner.jpg' %}) center center/cover no-repeat;">
+  <div class="overlay overlay-bg" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center" style="min-height: 250px;">
+      <div class="about-content col-lg-12 text-center">
+        <h1 class="text-white">About Us</h1>
+        <p class="text-white link-nav">
+          <a href="{% url 'index' %}" style="color: #00dffc;">Home</a>  
+          <span class="lnr lnr-arrow-right text-white"></span>  
+          <a href="{% url 'aboutus' %}" style="color: #00dffc;"> About Us</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Banner Area -->
+
+<!-- Start About Info Area -->
+<section class="section-gap info-area" id="about" style="padding: 60px 0; background-color: #f9f9f9;">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-40 col-lg-8">
+        <div class="title text-center">
+          <h1 class="mb-10" style="font-weight: 600;">A Few Words About ArtVault</h1>
+          <p style="color: #777;">Where creativity meets technology — powered by a sustainable, user-friendly platform for artists and audiences.</p>
+        </div>
+      </div>
+    </div>					
+
+    <div class="row align-items-center mt-5">
+      <!-- Image -->
+      <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0">
+        <img src="{% static 'img/pages/about-img.jpg' %}" class="img-fluid rounded shadow" alt="About ArtVault" style="max-height: 500px;">
+      </div>
+
+      <!-- Content -->
+      <div class="col-lg-6 col-md-12">
+        <div class="info-content">
+          <h2 class="pb-3" style="font-weight: 600;">Empowering Artists. Engaging Audiences.</h2>
+          <p style="color: #555; line-height: 1.8;">
+            Welcome to <strong>ArtVault</strong> — a Django-powered digital solution that makes managing, exploring, and showcasing art exhibitions simple and seamless. 
+            Our platform supports artists in registering their profiles, uploading artwork, and participating in live or virtual exhibitions.
+          </p>
+          <p style="color: #555; line-height: 1.8;">
+            With a clean interface and robust backend, administrators can easily manage users, artworks, categories, bookings, and more. Whether you’re a visitor or creator, ArtVault ensures you get the most immersive and organized experience possible.
+          </p>
+          <p style="color: #555; line-height: 1.8;">
+            {{ page.aboutus }} <!-- Dynamic content from database -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End About Info Area -->
+
+{% endblock %}
